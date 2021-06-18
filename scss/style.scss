@@ -723,7 +723,6 @@
     }
 
     /* OTHER COURSES------------------------ */
-
     &__other-courses {
         background-color: #141414;
         width: 240px;
@@ -846,6 +845,7 @@
         }
     }
 
+
     /* Описание курса */
     &__description-text {
         display: inline-block;
@@ -853,24 +853,22 @@
         font-size: 14px;
         line-height: 27px;
         color: #F1F1F1;
-
     }
 
     /* Кнопка расскрытия текста о курсе */
     &__show-button {
         @include show-hide-btn;
-        bottom: 134px;
+        bottom: 190px;
         transition: 0.3s;
 
         &:hover {
-            bottom: 128px;
+            bottom: 185px;
         }
 
         @include mobile {
             bottom: 100px
         }
     }
-
 
     /* Фото блока о курсе */
     &__picture-img {
@@ -920,6 +918,11 @@
             line-height: 15px;
         }
     }
+}
+
+.about__description-text-wrapper.show::after {
+    display: none;
+
 }
 
 .masters {
@@ -1021,6 +1024,7 @@
         flex-direction: column;
         justify-content: space-between;
         margin-top: 150px;
+
 
         @include mobile {
             margin-top: 21px;

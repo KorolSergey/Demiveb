@@ -1,0 +1,1 @@
+const contentWrapper = document.querySelector('.masters__content');

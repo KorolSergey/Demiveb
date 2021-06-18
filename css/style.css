@@ -866,11 +866,11 @@ button {
   position: absolute;
   background-color: transparent;
   border: none;
-  bottom: 134px;
+  bottom: 190px;
   transition: 0.3s;
 }
 .about__show-button:hover {
-  bottom: 128px;
+  bottom: 185px;
 }
 @media screen and (max-width: 478px) {
   .about__show-button {
@@ -923,6 +923,10 @@ button {
     font-size: 10px;
     line-height: 15px;
   }
+}
+
+.about__description-text-wrapper.show::after {
+  display: none;
 }
 
 .masters {
