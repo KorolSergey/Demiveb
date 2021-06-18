@@ -1,0 +1,14 @@
+@mixin title-theme {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 68px;
+    text-shadow: #696969 1px 0px, #696969 1px 1px, #696969 0px 1px, #696969 -1px 1px, #696969 -1px 0px, #696969 -1px -1px, #696969 0px -1px, #696969 1px -1px;
+    color: #242424;
+}
+
+@mixin show-hide-btn {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+}

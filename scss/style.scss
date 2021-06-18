@@ -1,0 +1,1123 @@
+@import 'reset';
+@import 'global';
+@import 'mixins';
+@import 'media-mixins';
+@import 'variables';
+
+.header {
+    position: absolute;
+    width: 100%;
+    min-width: 1271px;
+    height: 91px;
+    border-bottom: 1px solid #575757;
+    z-index: 5;
+    padding-left: 95px;
+
+    @include mobile {
+        min-width: 0;
+        height: 57px;
+        padding-left: 0;
+    }
+
+    /* Контент Хэдера */
+    &__content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 91px;
+
+        @include mobile {
+            height: 57px;
+            width: 100%;
+        }
+    }
+
+    &__logo-mobile {
+        display: none;
+
+        @include mobile {
+            display: block;
+
+        }
+    }
+
+    /* Навтгация хэдера */
+    &__navigation {
+        display: flex;
+        align-items: center;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__navigation-link {
+        font-size: 10px;
+        line-height: 30px;
+        text-transform: uppercase;
+        color: $white;
+        transition: 0.3s;
+
+        &:hover {
+            color: $yellow;
+        }
+    }
+
+    &__navigation-item {
+        margin-right: 26px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    /* Кнопка обратной связи хэдера */
+    &__submit {
+        margin-left: 52px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__loop-img {
+        margin-right: 24px;
+        cursor: pointer;
+
+        @include mobile {
+            margin-right: -10px;
+        }
+    }
+
+    &__burger-mobile {
+        width: 30px;
+        height: 15px;
+        position: relative;
+        cursor: pointer;
+        display: none;
+
+        &::before,
+        &::after {
+            content: '';
+            background-color: $white;
+            position: absolute;
+            width: 30px;
+            height: 1px;
+            left: 0;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            width: 19px;
+        }
+
+        @include mobile {
+            display: block;
+        }
+    }
+
+    /* Бургер мобильной версии */
+    &__burger-menu-mobile {
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 30px;
+        height: 1px;
+        background-color: $white;
+        display: none;
+
+        @include mobile {
+            display: block;
+        }
+    }
+
+    /* Кнопка хэдера */
+    &__submit-btn {
+        width: 200px;
+        height: 43px;
+        cursor: pointer;
+        background: transparent;
+        border: 1px solid $yellow;
+        color: $yellow;
+        font-size: 10px;
+        line-height: 10px;
+        text-transform: uppercase;
+        font-family: 'Micra';
+        transition: 0.3s;
+
+        &:hover {
+            background-color: $yellow;
+            color: $black;
+        }
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+}
+
+.container-header {
+    max-width: 1332px;
+    min-width: 1175px;
+    margin: 0 auto;
+    height: 91px;
+    padding: 0 5px;
+
+    @include mobile {
+        min-width: 0;
+        width: 100%;
+        max-width: 290px;
+        margin: 0 auto;
+        height: 57px;
+        display: flex;
+        padding: 0;
+    }
+}
+
+.container-main {
+    width: 1170px;
+    margin: 0 auto;
+
+    @include mobile {
+        width: 100%;
+        max-width: 290px;
+        margin: 0 auto;
+    }
+}
+
+.main {
+    width: 100%;
+    min-width: 1271px;
+
+    @include mobile {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+.intro {
+    display: flex;
+    width: 100%;
+    height: 935px;
+    background-image: url(../img/background-img.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    @include mobile {
+        background-image: url(../img/mobile-intro.bg.png);
+        background-size: cover;
+        background-position: center;
+        height: 728px;
+    }
+
+
+    /* Боковой контент Интро */
+    &__side {
+        height: 935px;
+        width: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        border-right: 1px solid #575757;
+        z-index: 11;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    /* Бургер десктопной версии */
+    &__burger {
+        width: 30px;
+        height: 15px;
+        margin-top: 39px;
+        position: relative;
+        cursor: pointer;
+
+
+        &::before,
+        &::after {
+            content: '';
+            background-color: $white;
+            position: absolute;
+            width: 30px;
+            height: 1px;
+            left: 0;
+        }
+
+        &::before {
+            top: 0;
+        }
+
+        &::after {
+            bottom: 0;
+            width: 19px;
+        }
+    }
+
+    &__burger-menu {
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 30px;
+        height: 1px;
+        background-color: $white;
+    }
+
+    /* Лого бокового меню */
+    &__side-logo {
+        width: 48px;
+        height: 211px;
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__social-link {
+        display: block;
+        width: 26px;
+        height: 26px;
+        margin-bottom: 15px;
+    }
+
+    &__social-face {
+        margin-bottom: 52px;
+    }
+
+
+    /* Основной контент Интро------------- */
+    &__content {
+        width: 100%;
+        position: absolute;
+        top: -10px;
+        padding-left: 100px;
+
+        @include mobile {
+            padding-left: 0;
+        }
+    }
+
+    &__container {
+        max-width: 1330px;
+        margin: 100px auto;
+        padding-top: 20px;
+
+        @include mobile {
+            width: 100%;
+            max-width: 290px;
+            margin-top: 57px;
+        }
+    }
+
+    /* Интро шапка */
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mobile {
+            margin-top: 12px;
+            width: 290px;
+            display: block;
+        }
+    }
+
+    /* Интро ссылки пути */
+    &__nav-path_link {
+        font-family: 'Open Sans';
+        font-size: 16px;
+        line-height: 29px;
+        color: $white;
+        text-transform: capitalize;
+        width: 100%;
+
+        @include mobile {
+            font-size: 14px;
+            line-height: 19px;
+        }
+    }
+
+    &__path-link {
+
+        &::after {
+            content: '-';
+            display: inline;
+            color: $white;
+            margin-left: 7px;
+        }
+
+        @include mobile {
+            margin-left: 3px;
+        }
+    }
+
+    &__path-noactive {
+        pointer-events: none;
+        cursor: default;
+        color: #9F9F9F;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__nav-path_link-mobile {
+        font-family: 'Open Sans';
+        font-size: 14px;
+        line-height: 29px;
+        color: $white;
+        cursor: default;
+        color: #9F9F9F;
+        display: none;
+
+        @include mobile {
+            display: inline;
+        }
+    }
+
+    /* Номера телефонов */
+    &__contacts {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 281px;
+        padding-right: 10px;
+    }
+
+    &__phone-number {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 35px;
+        color: $white;
+        text-transform: lowercase;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    /* Основная информация интро */
+    &__main-info {
+        margin-top: 178px;
+        display: flex;
+        justify-content: space-between;
+
+        @include mobile {
+            display: block;
+            margin-top: 55px;
+            text-align: center;
+        }
+    }
+
+    /* Интро заголовок */
+    &__title {
+        font-size: 50px;
+        line-height: 65px;
+        color: $white;
+
+        @include mobile {
+            font-size: 19px;
+            line-height: 30px;
+        }
+    }
+
+    /* Интро описание */
+    &__description {
+        font-family: 'Open Sans';
+        width: 640px;
+        height: 82px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 29px;
+        display: block;
+        color: $white;
+        margin-top: 15px;
+
+        @include mobile {
+            font-size: 12px;
+            line-height: 20px;
+            width: 100%;
+        }
+    }
+
+    &__action-block {
+        margin-top: 45px;
+    }
+
+    &__course-title {
+        font-family: 'montserrat', sans-serif;
+        font-size: 18px;
+        line-height: 38px;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+
+        @include mobile {
+            font-size: 16px;
+            line-height: 38px;
+        }
+    }
+
+    &__course-date {
+        font-family: 'montserrat', sans-serif;
+        text-transform: uppercase;
+        font-size: 40px;
+        line-height: 59px;
+        color: $yellow;
+
+        @include mobile {
+            font-size: 24px;
+            line-height: 38px;
+        }
+    }
+
+    &__course-time {
+        color: $white;
+        font-size: 14px;
+        font-family: 'montserrat', sans-serif;
+        margin-top: 10px;
+    }
+
+    &__action-btn {
+        color: $black;
+        background-color: $yellow;
+        width: 444px;
+        height: 60px;
+        margin-top: 55px;
+        font-family: Micra;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 19px;
+        text-transform: uppercase;
+        transition: 0.3s;
+        border: 1px solid $yellow;
+
+        &:hover {
+            background-color: transparent;
+            color: $yellow;
+        }
+
+        @include mobile {
+            width: 290px;
+            font-size: 9px;
+            line-height: 9px;
+            margin-top: 30px;
+        }
+    }
+
+    &__btn-down {
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        margin: 40px auto;
+        display: block;
+        transition: 0.3s;
+
+        &:hover {
+            margin-top: 50px;
+        }
+    }
+
+    &__other-courses-mobile {
+        display: none;
+
+        @include mobile {
+            display: block;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #141414;
+            height: 59px;
+            position: absolute;
+            bottom: 10px;
+            padding: 0 20px 0 28px;
+        }
+    }
+
+    &__other-courses-text {
+        font-weight: bold;
+        font-size: 8px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: $white;
+    }
+
+    &__action-buttons-mobile {
+        display: none;
+
+        @include mobile {
+            display: flex;
+            width: 100%;
+            height: 49px;
+            margin-top: -10px;
+            position: absolute;
+        }
+    }
+
+    &__actio0button-mobile-1,
+    &__actio0button-mobile-2 {
+        font-family: 'Micra';
+        width: 50%;
+        border: none;
+        font-weight: bold;
+        font-size: 8px;
+        line-height: 8px;
+        text-transform: uppercase;
+        color: #242424;
+    }
+
+    &__actio0button-mobile-1 {
+        background-color: $yellow;
+    }
+
+    &__actio0button-mobile-2 {
+        background-color: #F7F7F7;
+    }
+}
+
+.detail {
+    padding-top: 215px;
+    background-color: #242424;
+    width: 100%;
+    height: 2800px;
+    position: relative;
+    overflow: hidden;
+
+    @include mobile {
+        margin-top: 77px;
+        padding-top: 73px;
+        height: 3900px;
+    }
+
+
+    &__container {
+        width: 1170px;
+        margin: 0 auto;
+    }
+
+    &__info-title {
+        @include title-theme;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__info-title-mobile {
+        display: none;
+
+        @include mobile {
+            display: block;
+            @include title-theme;
+            font-size: 34px;
+            line-height: 40px;
+        }
+    }
+
+    /* Блоки детальной информации */
+    &__info-blocks {
+        margin-top: 77px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 75%;
+
+        @include mobile {
+            flex-direction: column;
+            margin-top: 32px;
+
+        }
+    }
+
+    /* Линия между блоками */
+    &__vertical-stripe,
+    &__vertical-stripe-mobile {
+        width: 1px;
+        height: 101px;
+        background-color: #CFCFCF;
+        margin: 11px 65px 0 65px;
+
+        @include mobile {
+            width: 100px;
+            height: 1px;
+            margin: 33px 0px 28px 0px;
+        }
+    }
+
+    &__vertical-stripe-mobile {
+        display: none;
+
+        @include mobile {
+            display: block;
+        }
+    }
+
+    &__vertical-stripe-down {
+        margin-top: 51px;
+
+        @include mobile {
+            margin-top: 29px;
+        }
+    }
+
+    &__info-block {
+        width: 234px;
+        font-family: 'montserrat', sans-serif;
+    }
+
+    &__info-block-start {
+        width: 144px;
+    }
+
+    &__info-block-down {
+        margin-top: 40px;
+
+        &:last-child {
+            width: 375px;
+        }
+
+        @include mobile {
+            margin-top: 0;
+        }
+    }
+
+    /* Текст блока */
+    &__block-title {
+        font-size: 14px;
+        line-height: 35px;
+        text-transform: uppercase;
+        color: #9C9C9C;
+    }
+
+    &__block-content {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 28px;
+        color: $white;
+        text-transform: uppercase;
+    }
+
+    &__block-additional {
+        font-size: 14px;
+        line-height: 24px;
+        color: #F1F1F1;
+        margin-top: 10px;
+
+        @include mobile {
+            width: 290px;
+            height: 96px;
+        }
+    }
+
+    /* OTHER COURSES------------------------ */
+
+    &__other-courses {
+        background-color: #141414;
+        width: 240px;
+        height: 490px;
+        position: absolute;
+        top: 230px;
+        right: 0;
+        padding: 48px 30px 30px 45px;
+        transition: 0.4s;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+
+    &__courses-title {
+        font-family: 'Gilroy';
+        color: $white;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: uppercase;
+        margin-bottom: 35px;
+    }
+
+    &__course-stripe {
+        width: 33px;
+        height: 3px;
+        background-color: #D7FA00;
+    }
+
+    &__course-name {
+        font-family: 'Gilroy';
+        color: $white;
+        font-size: 12px;
+        line-height: 20px;
+        display: block;
+        font-weight: 700;
+        margin-top: 8px;
+    }
+
+    &__course-date {
+        font-family: 'Gilroy';
+        color: #D7FA00;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    &__courses-block {
+        margin-bottom: 20px;
+    }
+
+    &__hide-btn {
+        @include show-hide-btn;
+        top: 43%;
+        right: 216px;
+    }
+}
+
+.detail__other-courses.detail__hide-courses {
+    transform: translateX(100%);
+}
+
+/* О курсе */
+.about {
+    margin-top: 240px;
+
+    @include mobile {
+        flex-direction: column;
+        margin-top: 73px;
+    }
+
+    &__main-content {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    &__description {
+        position: relative;
+    }
+
+    /* Заголовок о курсе */
+    &__description-title {
+        @include title-theme;
+
+        @include mobile {
+            font-size: 34px;
+            line-height: 40px;
+            margin-top: 32px;
+        }
+    }
+
+    &__description-text-wrapper {
+        width: 632px;
+        height: 270px;
+        margin-top: 60px;
+        position: relative;
+
+        @include mobile {
+            width: 290px;
+            height: 648px;
+            margin-top: 23px;
+        }
+    }
+
+    &__description-text-wrapper::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 632px;
+        height: 185px;
+        background: linear-gradient(rgba(51, 50, 50, 0), #242424 70%);
+
+        @include mobile {
+            width: 290px;
+            height: 648px;
+        }
+    }
+
+    /* Описание курса */
+    &__description-text {
+        display: inline-block;
+        font-family: 'Montserrat';
+        font-size: 14px;
+        line-height: 27px;
+        color: #F1F1F1;
+
+    }
+
+    /* Кнопка расскрытия текста о курсе */
+    &__show-button {
+        @include show-hide-btn;
+        bottom: 134px;
+        transition: 0.3s;
+
+        &:hover {
+            bottom: 128px;
+        }
+
+        @include mobile {
+            bottom: 100px
+        }
+    }
+
+
+    /* Фото блока о курсе */
+    &__picture-img {
+        height: 600px;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__picture-mobile {
+        display: none;
+
+        @include mobile {
+            display: block;
+        }
+    }
+
+    /* Ссылка на сертификаты */
+    &__certificates {
+        margin-top: 97px;
+        width: 422px;
+        height: 20px;
+        margin: 97px auto 0;
+        border-bottom: 2px solid $white;
+        padding-bottom: 22px;
+
+        @include mobile {
+            width: 244px;
+            height: 30px;
+            padding-bottom: 40px;
+            text-align: center;
+            margin-top: 0;
+        }
+    }
+
+    &__certificates-link {
+        font-family: 'Micra';
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 10px;
+        text-transform: uppercase;
+        color: #CCD500;
+
+        @include mobile {
+            font-size: 10px;
+            line-height: 15px;
+        }
+    }
+}
+
+.masters {
+    margin-top: 200px;
+
+    @include mobile {
+        margin-top: 79px;
+    }
+
+    &__title {
+        @include title-theme;
+
+        @include mobile {
+            font-size: 34px;
+            line-height: 40px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    /* Описание мастера */
+    &__about-master {
+        width: 471px;
+        margin: 172px 42px 0 0;
+
+        @include mobile {
+            margin-top: 14px;
+            width: 290px;
+        }
+    }
+
+    &__name {
+        font-family: 'Micra';
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 27px;
+        text-transform: uppercase;
+        color: $white;
+        display: block;
+
+        @include mobile {
+            font-size: 12px;
+        }
+    }
+
+    /* Достижения мастера */
+    &__profession {
+        font-family: 'Micra';
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #818181;
+
+        @include mobile {
+            font-size: 9px;
+            line-height: 16px;
+            width: 228px;
+            height: 32px;
+        }
+    }
+
+    &__header {
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 452px;
+            height: 0.5px;
+            background-color: #818181;
+            margin: 31px 0;
+            display: block;
+
+            @include mobile {
+                width: 290px;
+                margin: 15px 0;
+            }
+        }
+    }
+
+    &__description {
+        font-family: 'Montserrat';
+        font-size: 14px;
+        line-height: 27px;
+        color: #F1F1F1;
+    }
+
+    /* Результаты работы мастера */
+    &__master-numbers {
+        width: 247px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 150px;
+
+        @include mobile {
+            margin-top: 21px;
+        }
+    }
+
+    &__number-block {
+        margin-bottom: 22px;
+    }
+
+    &__number {
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 68px;
+        text-transform: uppercase;
+        color: #CCD500;
+
+        @include mobile {
+            height: 65px;
+            left: 35px;
+        }
+    }
+
+    &__text {
+        font-family: Micra;
+        font-size: 10px;
+        line-height: 18px;
+        text-transform: uppercase;
+        color: $white;
+        width: 290px;
+
+        @include mobile {
+            font-size: 9px;
+            line-height: 16px;
+        }
+    }
+
+    &__picture {
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__picture-img {
+        width: 350px;
+        margin-top: 55px;
+        z-index: 10;
+    }
+
+    &__picture-mobile {
+        display: none;
+
+        @include mobile {
+            display: block;
+            margin-top: 28px;
+        }
+    }
+
+    &__arrows {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 47px;
+    }
+
+    &__btn {
+        @include show-hide-btn;
+        position: static;
+        cursor: pointer;
+        z-index: 5;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__btn-mobile {
+        display: none;
+
+        @include mobile {
+            display: inline-block;
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    &__gradient {
+        position: absolute;
+        width: 1200px;
+        height: 600px;
+        bottom: 0;
+        right: 0;
+        background: radial-gradient(125% 65% at 50% 50%, rgba(67, 67, 67, 0.4) 0%, rgba(77, 134, 220, 0.4) 42.19%, rgba(105, 210, 210, 0.4) 76.04%, rgba(223, 90, 90, 0.4) 100%);
+        filter: blur(900px);
+
+
+        @include mobile {
+            display: none;
+        }
+    }
+}
