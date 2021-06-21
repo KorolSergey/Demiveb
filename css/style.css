@@ -338,6 +338,7 @@ button {
   max-width: 1330px;
   margin: 100px auto;
   padding-top: 20px;
+  overflow: hidden;
 }
 @media screen and (max-width: 478px) {
   .intro__container {
@@ -443,12 +444,19 @@ button {
   font-size: 50px;
   line-height: 65px;
   color: white;
+  transform: translate(0px, 80%);
+  opacity: 0;
+  transition: 0.8s;
 }
 @media screen and (max-width: 478px) {
   .intro__title {
     font-size: 19px;
     line-height: 30px;
   }
+}
+.intro__title._show-title {
+  transform: translate(0px, 0px);
+  opacity: 1;
 }
 .intro__description {
   font-family: "Open Sans";
@@ -460,6 +468,9 @@ button {
   display: block;
   color: white;
   margin-top: 15px;
+  transform: translate(0px, 80%);
+  opacity: 0;
+  transition: 0.8s;
 }
 @media screen and (max-width: 478px) {
   .intro__description {
@@ -468,8 +479,21 @@ button {
     width: 100%;
   }
 }
+.intro__description._show-title {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  transition: all 0.8s ease 0.4s;
+}
 .intro__action-block {
   margin-top: 45px;
+  transform: translate(100%, 0px);
+  opacity: 0;
+  transition: 0.8s;
+}
+.intro__action-block._show-title {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  transition: all 0.8s ease 0.8s;
 }
 .intro__course-title {
   font-family: "montserrat", sans-serif;
@@ -664,6 +688,8 @@ button {
   height: 101px;
   background-color: #CFCFCF;
   margin: 11px 65px 0 65px;
+  transform: scale(0);
+  transition: all 0.8s ease 0s;
 }
 @media screen and (max-width: 478px) {
   .detail__vertical-stripe, .detail__vertical-stripe-mobile {
@@ -671,6 +697,9 @@ button {
     height: 1px;
     margin: 33px 0px 28px 0px;
   }
+}
+.detail__vertical-stripe._show-title, .detail__vertical-stripe-mobile._show-title {
+  transform: scale(1);
 }
 .detail__vertical-stripe-mobile {
   display: none;
@@ -682,6 +711,8 @@ button {
 }
 .detail__vertical-stripe-down {
   margin-top: 51px;
+  transform: scale(0);
+  transition: all 0.8s ease 0s;
 }
 @media screen and (max-width: 478px) {
   .detail__vertical-stripe-down {
@@ -691,6 +722,11 @@ button {
 .detail__info-block {
   width: 234px;
   font-family: "montserrat", sans-serif;
+  transform: scale(0);
+  transition: all 0.8s ease 0s;
+}
+.detail__info-block._show-title {
+  transform: scale(1);
 }
 .detail__info-block-start {
   width: 144px;
@@ -877,6 +913,9 @@ button {
     bottom: 100px;
   }
 }
+.about__show-button._move-button {
+  bottom: 145px;
+}
 .about__picture-img {
   height: 600px;
 }
@@ -940,6 +979,20 @@ button {
     margin-top: 79px;
   }
 }
+.masters__container {
+  width: 1170px;
+  height: 795px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.masters__slider-wrapper {
+  height: 528px;
+  width: 3510px;
+  display: flex;
+  position: relative;
+  left: 0;
+  transition: all ease 1s;
+}
 .masters__title {
   text-transform: uppercase;
   font-weight: bold;
@@ -957,6 +1010,8 @@ button {
 .masters__content {
   display: flex;
   justify-content: space-between;
+  width: 1170px;
+  margin-right: 20px;
 }
 @media screen and (max-width: 478px) {
   .masters__content {
@@ -1090,7 +1145,68 @@ button {
 .masters__arrows {
   display: flex;
   justify-content: space-between;
-  margin-top: 47px;
+  margin-top: 24px;
+}
+.masters__btn-new {
+  cursor: pointer;
+  width: 155px;
+  height: 78px;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  z-index: 5;
+  background: url(../img/Subtract.svg) 17px/auto no-repeat;
+  transition: 0.3s;
+}
+.masters__btn-new:hover {
+  background: url(../img/Subtract.svg) 17px/55px no-repeat;
+}
+.masters__prev-img {
+  position: absolute;
+  top: 34px;
+  left: 7px;
+  transition: 0.3s;
+}
+.masters__btn-text {
+  position: absolute;
+  top: 34px;
+  left: 40px;
+  font-family: Micra;
+  font-size: 10px;
+  line-height: 10px;
+  color: #FFFFFF;
+  display: block;
+  background-color: transparent;
+}
+.masters__btn-new:hover .masters__prev-img {
+  left: 0;
+}
+.masters__btn-next {
+  cursor: pointer;
+  width: 155px;
+  height: 78px;
+  background-color: transparent;
+  margin-right: 32px;
+  border: none;
+  position: relative;
+  z-index: 5;
+  background: url(../img/Subtract-2.svg) right/auto no-repeat;
+  transition: 0.3s;
+}
+.masters__btn-next:hover {
+  background: url(../img/Subtract-2.svg) right/55px no-repeat;
+}
+.masters__btn-text-next {
+  left: 40px;
+}
+.masters__next-img-next {
+  position: absolute;
+  top: 34px;
+  left: 146px;
+  transition: 0.3s;
+}
+.masters__btn-next:hover .masters__next-img-next {
+  left: 154px;
 }
 .masters__btn {
   position: absolute;
